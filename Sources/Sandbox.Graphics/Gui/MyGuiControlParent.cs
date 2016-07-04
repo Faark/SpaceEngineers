@@ -69,6 +69,13 @@ namespace Sandbox.Graphics.GUI
                     continue;
                 }
 
+                var start = control.Position;
+                var end = control.Size + start;
+                if (end.X < -1 || end.Y < -1 || start.X > Size.X + 1 || end.Y > Size.Y + 1)
+                {
+                    continue;
+                }
+
                 control.Draw(transitionAlpha, backgroundTransitionAlpha);
             }
         }
